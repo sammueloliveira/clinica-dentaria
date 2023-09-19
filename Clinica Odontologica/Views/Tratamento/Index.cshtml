@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Domain.Entities.Tratamento>
+
+
+
+<p>
+    <a asp-action="Create">Cadastrar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Paciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dentista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataConsulta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alergias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OutrasInformacoes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.Paciente.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dentista.Nome)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataConsulta)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alergias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OutrasInformacoes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

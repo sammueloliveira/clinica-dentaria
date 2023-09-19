@@ -1,0 +1,53 @@
+﻿@model Domain.Entities.Tratamento
+
+
+
+<h1>Detalhes do tratamento</h1>
+
+<div>
+   
+    <hr />
+	<dl class="row">
+
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Paciente)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Paciente.Nome)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Dentista)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Dentista.Nome)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.DataConsulta)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.DataConsulta)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Descricao)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Descricao)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Alergias)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Alergias)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.OutrasInformacoes)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.OutrasInformacoes)
+		</dd>
+	</dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a asp-action="Index">Voltar</a>
+</div>

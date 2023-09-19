@@ -1,0 +1,54 @@
+﻿@model Domain.Entities.Tratamento
+
+
+<h3>Tem certeza que deseja excluir?</h3>
+<div>
+  
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataConsulta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataConsulta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Paciente)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Paciente.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Dentista)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dentista.Nome)
+        </dd>
+       
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Alergias)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Alergias)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OutrasInformacoes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OutrasInformacoes)
+        </dd>
+       
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Excluir" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar</a>
+    </form>
+</div>

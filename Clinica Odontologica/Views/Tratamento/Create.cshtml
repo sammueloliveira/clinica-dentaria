@@ -1,0 +1,56 @@
+﻿@model Domain.Entities.Tratamento
+
+
+
+<h2>Cadastrar Tratamento</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="UserId" type="hidden" />
+
+            <div class="form-group">
+                <label asp-for="PacienteId" class="control-label"></label>
+                <select asp-for="PacienteId" class="form-control" asp-items="ViewBag.Pacientes"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DentistaId" class="control-label"></label>
+                <select asp-for="DentistaId" class="form-control" asp-items="ViewBag.Dentistas"></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DataConsulta" class="control-label"></label>
+                <input asp-for="DataConsulta" class="form-control" />
+                <span asp-validation-for="DataConsulta" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alergias" class="control-label"></label>
+                <input asp-for="Alergias" class="form-control" />
+                <span asp-validation-for="Alergias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OutrasInformacoes" class="control-label"></label>
+                <input asp-for="OutrasInformacoes" class="form-control" />
+                <span asp-validation-for="OutrasInformacoes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
