@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Apis_Clinica.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/paciente")]
     [ApiController]
     public class PacienteController : ControllerBase
     {

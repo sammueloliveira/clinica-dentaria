@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Apis_Clinica.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/auth")]
     [ApiController]
     public class AuthController : ControllerBase
     {
@@ -23,7 +23,7 @@ namespace Apis_Clinica.Controllers
             _jwtConfig = options.Value;
         }
 
-        [HttpPost("Registrar")]
+        [HttpPost("registrar")]
         public async Task<ActionResult> Registrar(RegisterViewModel registerVM)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState.Values.SelectMany(e => e.Errors));
@@ -46,7 +46,7 @@ namespace Apis_Clinica.Controllers
             return BadRequest(result.Errors);
         }
 
-        [HttpPost("Login")]
+        [HttpPost("login")]
         public async Task<ActionResult> Login(LoginViewModel LoginVM)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState.Values.SelectMany(e => e.Errors));
@@ -59,7 +59,7 @@ namespace Apis_Clinica.Controllers
             }
             if (result.IsLockedOut)
             {
-                return BadRequest("Usuário bloqueado. Tente novamente após 30 minutos.");
+                return BadRequest("Usuario bloqueado. Tente novamente apos 30 minutos.");
             }
 
             return BadRequest("Email e/ou Senha invalidos!");
