@@ -1,4 +1,4 @@
-# Clinica Dentaria
+# clinica-dentaria
 Este projeto é um sistema desenvolvido em C# .NET para a gestão de pacientes, dentistas e agendamentos em uma clínica odontológica, proporcionando organização e eficiência operacional. A aplicação oferece uma interface amigável e funcionalidades essenciais para facilitar o gerenciamento das informações da clínica.
 
 Tecnologias Utilizadas
